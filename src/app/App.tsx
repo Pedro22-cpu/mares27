@@ -31,6 +31,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import rvpt from "../assets/rvpt.png";
 import { site } from "../site.config";
+import sala1 from "../assets/sala1.jpg";
 
 import logo from "../assets/rvpt.png";
 import vista from "../assets/vistasala.jpeg";
