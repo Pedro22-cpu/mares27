@@ -30,15 +30,12 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import rvpt from "../assets/rvpt.png";
+import { site } from "../site.config";
 
-import primeirapagina from "../assets/panoramica.jpg";
-import galeria from "../assets/primeirapagina.jpg";
 import logo from "../assets/rvpt.png";
-import profile from "../assets/profile.png";
 import vista from "../assets/vistasala.jpeg";
 import planta from "../assets/planta.png";
 import qr from "../assets/qr.png";
-import qr1 from "../assets/qr1.png";
 import sala from "../assets/sala.jpg";
 import predio from "../assets/predio.jpg";
 import video from "../assets/video.mp4";
@@ -49,42 +46,12 @@ import logocb from "../assets/logocb.png";
 import logoteam from "../assets/logoTeam.png";
 import panorama from "../assets/panorama.jpeg";
 import footer from "../assets/footer.png";
-import sala1 from "../assets/sala1.jpg";
-import cozinha2 from "../assets/cozinha2.jpg";
-import is1 from "../assets/is1.jpg";
-import sala8 from "../assets/sala8.jpg";
-import quarto1 from "../assets/quarto1.jpg";
 import vista2 from "../assets/vista2.jpeg";
 import panoramica from "../assets/panoramica.jpg";
 
-const HERO_IMG = primeirapagina;
+const HERO_IMG = site.images.hero;
 
-const GALLERY = [
-  {
-    src: sala1,
-    alt: "Sala de estar com sofá amplo e janelas do piso ao teto",
-  },
-  {
-    src: cozinha2,
-    alt: "Cozinha",
-  },
-  {
-    src: is1,
-    alt: "Mesa de jantar com design contemporâneo",
-  },
-  {
-    src: sala8,
-    alt: "Sala de estar",
-  },
-  {
-    src: quarto1,
-    alt: "Quarto com vista para o jardim",
-  },
-  {
-    src: galeria,
-    alt: "Piscina iluminada à noite",
-  },
-];
+const GALLERY = site.images.gallery;
 
 const AMENITIES = [
   { icon: Waves, label: "Vista Rio" },
@@ -143,7 +110,7 @@ export default function App() {
 function handleSubmit(e: FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
-  const numero = "351924007954";
+  const numero = site.consultant.whatsapp;
   const linkDoImovel = window.location.href;
 
   const mensagem = `Nome: ${formData.nome}
@@ -309,7 +276,7 @@ ${linkDoImovel}`;
         <div className="absolute inset-0 bg-[#0C0B09]">
           <img
             src={HERO_IMG}
-            alt="Fachada da villa moderna com piscina ao entardecer"
+            alt={site.images.heroAlt}
             className="w-full h-full object-cover opacity-60"
           />
         </div>
@@ -338,10 +305,10 @@ ${linkDoImovel}`;
           
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mt-8">
             {[
-              { icon: Bed, val: "3", label: "Quartos" },
-              { icon: Bath, val: "2", label: "WC" },
-              { icon: Maximize2, val: "104 m²", label: "Área total" },
-              { icon: Car, val: "1", label: "Vaga" },
+              { icon: Bed, val: site.property.specs.rooms, label: "Quartos" },
+              { icon: Bath, val: site.property.specs.bathrooms, label: "WC" },
+              { icon: Maximize2, val: site.property.specs.area, label: "Área total" },
+              { icon: Car, val: site.property.specs.parking, label: "Vaga" },
             ].map(({ icon: Icon, val, label }) => (
               <div key={label} className="flex items-center gap-3">
                 <Icon size={16} className="text-primary" />
@@ -457,11 +424,11 @@ ${linkDoImovel}`;
 
   <div className="text-left">
     <h3 className="font-display text-4xl font-normal mb-2">
-      Av. das Escolas, 12, <em>Portela</em>
+      {site.property.addressStreet} <em>{site.property.addressHighlight}</em>
     </h3>
 
     <p className="text-5xl font-display text-primary">
-      232.000 €
+      {site.property.priceInvestment}
     </p>
   </div>
 
@@ -495,7 +462,7 @@ ${linkDoImovel}`;
     <em>investimento sólido</em>
   </h2>
   <a
-    href="https://carlos-barata.century21.pt/comprar/C0222-07203"
+    href={site.property.listingInvestmentUrl}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -633,11 +600,11 @@ ${linkDoImovel}`;
 
           <div className="text-right">
             <h3 className="font-display text-4xl font-normal mb-2">
-              Av. das Escolas, 12, <em>Portela</em>
+              {site.property.addressStreet} <em>{site.property.addressHighlight}</em>
             </h3>
 
             <p className="text-5xl font-display text-primary">
-              495.000 €
+              {site.property.priceHousing}
             </p>
           </div>
 
@@ -671,7 +638,7 @@ ${linkDoImovel}`;
     A sua casa
   </h2>
   <a
-    href="https://carlos-barata.century21.pt/comprar/C0222-07202"
+    href={site.property.listingHousingUrl}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -1049,32 +1016,32 @@ ${linkDoImovel}`;
               <div className="flex items-start gap-4 p-5 border border-border">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-secondary flex-shrink-0">
                   <img
-                    src={profile}
-                    alt="Carlos Barata, consultor imobiliário"
+                    src={site.consultant.photo}
+                    alt={`${site.consultant.name}, ${site.consultant.role}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Carlos Barata</p>
+                  <p className="font-medium text-foreground">{site.consultant.name}</p>
                   <p className="font-mono text-primary text-xs tracking-widest uppercase mt-0.5">
-                    Consultor imobiliário
+                    {site.consultant.role}
                   </p>
                   <div className="mt-3 flex flex-col gap-1.5">
                     <a
-                      href="tel:+351924007954"
+                      href={`tel:${site.consultant.phoneE164}`}
                       className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
-                      <Phone size={12} /> (351) 924007954
+                      <Phone size={12} /> {site.consultant.phoneDisplay}
                     </a>
                     <a
-                      href="mailto:carlos.barata@century21.pt"
+                      href={`mailto:${site.consultant.email}`}
                       className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
-                      <Mail size={12} /> carlos.barata@century21.pt
+                      <Mail size={12} /> {site.consultant.email}
                     </a>
                     <div className="mt-4 flex items-center gap-3">
                       <a
-                        href="https://api.whatsapp.com/send?phone=351924007954"
+                        href={`https://api.whatsapp.com/send?phone=${site.consultant.whatsapp}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1085,7 +1052,7 @@ ${linkDoImovel}`;
                       
 
                       <a
-                        href="https://www.facebook.com/carlos.barata.oficial"
+                        href={site.consultant.social.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1094,7 +1061,7 @@ ${linkDoImovel}`;
                       </a>
 
                       <a
-                        href="https://www.linkedin.com/in/carlos-barata-c21-oficial/"
+                        href={site.consultant.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1103,7 +1070,7 @@ ${linkDoImovel}`;
                       </a>
 
                     <a
-                        href="https://www.instagram.com/carlos_barata_oficial"
+                        href={site.consultant.social.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1112,7 +1079,7 @@ ${linkDoImovel}`;
                       </a>
 
                       <a
-                        href="https://www.tiktok.com/@carlos_barata_ofi"
+                        href={site.consultant.social.tiktok}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1121,7 +1088,7 @@ ${linkDoImovel}`;
                       </a>
 
                       <a
-                        href="https://www.youtube.com/@carlosmbarata_oficial"
+                        href={site.consultant.social.youtube}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -1230,14 +1197,14 @@ ${linkDoImovel}`;
     {/* Centro - Frase */}
     <div className=" text-center -ml-25">
       <p className="text-sm text-muted-foreground italic text-xs">
-          Numodi - Mediação Imobiliária, Lda. | AMI 7002
+          {site.footer.licence}
       </p>
     </div>
 
     {/* Direita - Copyright */}
     <div className="text-center md:text-right">
       <p className="text-muted-foreground text-xs">
-        © 2026 Century 21 Imóveis de Luxo. Todos os direitos reservados.
+        {site.footer.copyright}
       </p>
     </div>
 
