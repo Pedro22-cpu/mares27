@@ -276,9 +276,9 @@ ${linkDoImovel}`;
           <img
             src={images.emblem}
             alt="Emblema"
-            className="mx-auto my-18 w-100 md:translate-y-35"
+            className="mx-auto my-18 w-100 -translate-y-4 md:translate-y-28"
           />
-          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-normal leading-none mb-6 max-w-5xl mx-auto text-center">
+          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-normal leading-none mb-6 max-w-5xl mx-auto text-center translate-y-10">
             {site.property.heroTitle}
             {/*<br />
             <em className="text-primary not-italic">T3</em>
@@ -287,7 +287,7 @@ ${linkDoImovel}`;
             
             <br />
             <br />
-            <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-normal leading-none mb-6 max-w-3xl mx-auto text-center">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-normal leading-none mb-6 max-w-3xl mx-auto text-center text-primary">
             {site.property.heroSubtitle}
           </h1>
           
@@ -379,56 +379,77 @@ ${linkDoImovel}`;
   id="investimento"
   className="py-28 bg-secondary border-y border-border scroll-mt-28"
 >
-  <div className="max-w-7xl mx-auto px-8 md:px-16">
+<div className="max-w-7xl mx-auto px-8 md:px-16">
   <p className="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-6">
-      02 — Investimento
+      02 — A Residência
     </p>
 
     <div className="flex flex-col md:flex-row md:items-start gap-40 mb-8">
   <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight">
-    {site.investment.title1[0]}
+    {site.residence.title[0]}
     <br />
-    <em>{site.investment.title1[1]}</em>
+    <em className="text-primary md:text-4xl md:ml-12">{site.residence.title[1]}</em>
   </h2>
     </div>
 
-  <div className="grid lg:grid-cols-2 gap-20 items-start">
+  <div className="grid lg:grid-cols-2 gap-24 lg:gap-20 items-start">
     <div>
-      <div className="mt-42">
-        <img
-          src={images.investmentPhoto}
-          alt="Sala de estar com sofá amplo e janelas do piso ao teto"
-          className="w-full aspect-[16/9] object-cover"
-        />
-        </div>
+      <div className="mt-22 max-w-5xl mx-auto px-6">
+  <p className="text-lg leading-relaxed text-foreground mb-8 whitespace-pre-line">
+    {site.residence.text}
+  </p>
+
+  <p className="text-lg leading-relaxed text-foreground whitespace-pre-line">
+    {site.residence.tagline}
+    <br />
+    <br /> <em className="text-primary md:text-4xl">
+      {site.residence.slogan.includes("\n") ? (
+        <>
+          <span className="not-italic">{site.residence.slogan.split("\n")[0]}</span>
+          {"\n"}
+          {site.residence.slogan.split("\n").slice(1).join("\n")}
+        </>
+      ) : (
+        site.residence.slogan
+      )}
+    </em>
+  </p>
+</div>
 
       <div className="mt-10 flex items-center justify-center gap-4">
 
   <img
     src={images.qr}
     alt="QR Code"
-    className="w-24 h-24 object-contain"
+    className="w-24 h-24 object-contain scale-130"
   />
 
   <div className="text-left">
     <h3 className="font-display text-4xl font-normal mb-2">
-      {site.property.addressStreet} <em>{site.property.addressHighlight}</em>
+      {site.residence.addressStreet} <em>{site.residence.addressHighlight}</em>
     </h3>
 
     <p className="text-5xl font-display text-primary">
-      {site.property.priceInvestment}
+      {site.residence.price}
     </p>
   </div>
 
 </div>
     </div>
-    <div className="mt-20">
-      <img
-        src={images.plan}
-        alt="Planta do apartamento"
-        className="w-full object-contain border border-border"
-      />
-    </div>
+    <div className="mt-0 lg:mt-20 flex justify-center">
+  <a
+    href={site.residence.listingUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-3/4"
+  >
+    <img
+      src={images.plan}
+      alt="Planta do apartamento"
+      className="w-full object-contain border border-border cursor-pointer transition-opacity hover:opacity-90 scale-130 lg:translate-y-18"
+    />
+  </a>
+</div>
   </div>
   </div>
 </section>
@@ -473,27 +494,9 @@ ${linkDoImovel}`;
     </p>
 
     <div className="text-muted-foreground leading-8 space-y-6">
-      <p>
-        {site.investment.businessIntro}
-      </p>
-
-      <div>
-        <p className="mb-3">
-          {site.investment.costsIntro}
-        </p>
-
-        <ul className="list-disc list-inside space-y-1 ml-2">
-          {site.investment.costs.map((c) => (
-            <li key={c}>{c}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        {site.investment.notes.map((n) => (
-          <p key={n}>{n}</p>
-        ))}
-      </div>
+      {site.investment.business.map((t) => (
+        <p key={t}><Rich text={t} /></p>
+      ))}
     </div>
   </div>
 
@@ -502,32 +505,10 @@ ${linkDoImovel}`;
     A Valorização
   </p>
 
-  <div className="text-muted-foreground leading-8 space-y-8">
-
-    <div>
-      <p className="mb-4">
-        {site.investment.valuation.marketIntro}
-      </p>
-
-      <ul className="list-disc list-inside space-y-2 ml-2">
-        {site.investment.valuation.market.map((t) => (
-          <li key={t}><Rich text={t} /></li>
-        ))}
-      </ul>
-    </div>
-
-    <div>
-      <p className="mb-4">
-        <Rich text={site.investment.valuation.scenarioIntro} />
-      </p>
-
-      <ul className="list-disc list-inside space-y-2 ml-2">
-        {site.investment.valuation.scenario.map((t) => (
-          <li key={t}><Rich text={t} /></li>
-        ))}
-      </ul>
-    </div>
-
+  <div className="text-muted-foreground leading-8 space-y-6">
+    {site.investment.valuation.map((t) => (
+      <p key={t}><Rich text={t} /></p>
+    ))}
   </div>
 </div>
 
