@@ -1,0 +1,29 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Esconde a barra superior do Google Translate */
+.goog-te-banner-frame, 
+.skiptranslate,
+iframe[id*=":1.container"] {
+  display: none !important;
+}
+
+/* Impede que o Google empurre a página para baixo */
+body {
+  top: 0 !important;
+}
+
+/* Esconde o popup de 'Texto original' que aparece ao passar o rato */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.goog-te-balloon-frame {
+  display: none !important;
+}

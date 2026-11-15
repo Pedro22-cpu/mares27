@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "about": "About Me",
+    "gallery": "Gallery",
+    "video": "Video",
+    "virtualTour": "Virtual Tour",
+    "location": "Location",
+    "contact": "Contact",
+    "schedule": "Book a visit"
+  },
+  "hero": {
+    "title": "take the next step with us",
+    "subtitle": "one property, two solutions",
+    "rooms": "Bedrooms",
+    "wc": "Bathrooms",
+    "area": "Total Area",
+    "parking": "Parking slot",
+    "investmentBtn": "Investment",
+    "housingBtn": "Private Housing"
+  },
+  "about": {
+    "tag": "01 — About Me",
+    "title": "What I propose <br /><em>to do for you...</em>",
+    "p1": "With accumulated experience in fields as diverse as finance, IT, commercial, and real estate, my unique objective is to care for your business as if it were my own. To achieve this, I have surrounded myself with a capable professional structure to provide you with excellent service.",
+    "p2": "Today, and despite ongoing continuous training and learning, I feel perfectly qualified to serve you in the most appropriate and advantageous way for your business, whether it is SELLING, BUYING, or RENTING a property."
+  },
+  "investment": {
+    "tag1": "02 — Investment",
+    "title1": "Bare Ownership + Lifetime Usufruct<br /><em>An investment tailored to you</em>",
+    "tag2": "03 — Investment",
+    "title2": "A solid investment<br /><em>opportunity</em>",
+    "businessTag": "The Deal",
+    "businessP1": "This type of investment stems from the capability to lock up capital that will only become available in the medium to long term, depending on the age of the usufructuary.",
+    "businessP2": "In the specific case of this deal, the proposal comes with minor procedural changes requested by the current owner and future usufructuary, such as leaving the following costs on their side:",
+    "costs": {
+      "imi": "Property Tax (IMI)",
+      "condo": "Condominium fees",
+      "insurance": "Multi-risk Insurance",
+      "utilities": "Water, electricity, energy, and communications",
+      "maintenance": "Apartment maintenance"
+    },
+    "noRent": "Absence of any rent to be paid.",
+    "lifetimeUsufruct": "Lifetime usufruct, meaning ownership of the property will only pass to the future owner upon the passing of the usufructuary.",
+    "valuationTag": "The Valuation",
+    "valuationIntro": "For renovated 3-bedroom or 4-bedroom properties in the Av. das Escolas area, in Portela:",
+    "marketConservative": "Conservative market value: <strong>500,000 €</strong>",
+    "marketProbable": "Probable market value: <strong>525,000 € – 575,000 €</strong>",
+    "marketPremium": "Premium value (fully renovated): <strong>600,000 € or more</strong>",
+    "scenarioIntro": "Estimated valuation scenario <strong>(15 years)</strong>",
+    "scenarioConservative": "Conservative (3.3%/year): <strong>800,000 €</strong>",
+    "scenarioProbable": "Probable (5.2%/year): <strong>950,000 € – 1,100,000 €</strong>",
+    "scenarioFavorable": "Very favorable (6.7%/year): <strong>1,200,000 € – 1,400,000 €</strong>"
+  },
+  "housing": {
+    "tag1": "04 — Private Housing",
+    "title1": "Sophistication and central location<br /><em>Prestigious 3-Bedroom Apartment with river view</em>",
+    "tag2": "05 — Private Housing",
+    "title2": "Your home",
+    "businessTag": "The Deal",
+    "businessItems": [
+      "Acquisition of the property with transfer and possession after the deed.",
+      "Immediate promissory contract (CPCV) with a <strong>10%</strong> deposit.",
+      "Deed within 90 days with the possibility to extend for another 30 days under a commodatum contract."
+    ],
+    "valuationTag": "The Valuation",
+    "marketIntro": "For renovated 3-bedroom or 4-bedroom properties in the Av. das Escolas area, in Portela:",
+    "marketConservative": "Conservative market value: <strong>500,000 €</strong>",
+    "marketProbable": "Probable market value: <strong>525,000 € to 575,000 €</strong>",
+    "marketPremium": "Premium value (fully renovated): <strong>600,000 € or more</strong>",
+    "scenarioIntro": "Estimated value scenario (15 years)",
+    "scenarioConservative": "Conservative (3.3%/year): <strong>800,000 €</strong>",
+    "scenarioProbable": "Probable (5.2%/year): <strong>950,000 € – 1,100,000 €</strong>",
+    "scenarioFavorable": "Very favorable (6.7%/year): <strong>1,200,000 € – 1,400,000 €</strong>",
+    "qualityTag": "The Quality",
+    "qualityItems": [
+      "Continuous quality and growth in value.",
+      "Mitsubishi Electric climate control system with 2 units (under warranty).",
+      "Double-glazed window frames for superior thermal and acoustic comfort.",
+      "Plumbing and electrical components fully updated.",
+      "Painting and waterproofing recently overhauled."
+    ]
+  },
+  "amenities": {
+    "tag": "06 — Key Features",
+    "items": {
+      "Vista Rio": "River View",
+      "Duas frentes": "Two fronts",
+      "Segurança": "Security",
+      "Ar condicionado": "Air Conditioning",
+      "Elevadores": "Elevators",
+      "Próximo ao Parque das Nações": "Near Parque das Nações",
+      "Box com mezzanine": "Garage Box with mezzanine",
+      "Localização Premium": "Premium Location"
+    }
+  },
+  "gallery": {
+    "tag": "07 — Gallery",
+    "title": "Every room,<br />an <em>experience</em>",
+    "photos": "{{count}} photographs",
+    "alts": {
+      "living": "Spacious living room with large sofa and floor-to-ceiling windows",
+      "modern": "Modern living room with panoramic windows",
+      "dining": "Dining table with contemporary design",
+      "kitchen": "Custom kitchen engineered in marble and wood",
+      "hall": "Entrance hall with floating staircase design",
+      "pool": "Illuminated swimming pool at night"
+    }
+  },
+  "video": {
+    "tag": "08 — Video",
+    "title": "Discover the property<br /><em>in motion</em>",
+    "fallback": "Your browser does not support videos."
+  },
+  "virtualTour": {
+    "tag": "09 — Virtual Tour",
+    "title": "Explore every space<br /><em>as if you were there</em>"
+  },
+  "location": {
+    "tag": "10 — Location",
+    "title": "Portela de Sacavém,<br /><em>next to Parque das Nações</em>",
+    "address": "Avenida das escolas, 12<br />Portela de Sacavém, Loures - Portugal",
+    "places": {
+      "cc": "Portela Shopping Center",
+      "sports": "Sports Park",
+      "schools": "Schools",
+      "auditorium": "Portela Auditorium"
+    },
+    "dist": "min"
+  },
+  "contact": {
+    "tag": "11 — Contact",
+    "title": "Schedule your<br /><em>exclusive visit</em>",
+    "p1": "I am available to personally showcase every detail of this exceptional residence. Visits by appointment, seven days a week.",
+    "role": "Real estate consultant",
+    "success": "Message sent",
+    "successSubtitle": "We will get in touch<br /><em>shortly</em>",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "E-mail",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "(+351) 123 456 789",
+      "message": "Message",
+      "messagePlaceholder": "I would like to book a visit...",
+      "submit": "Send message"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Century 21 Luxury Properties. All rights reserved."
+  }
+}

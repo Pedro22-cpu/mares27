@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "about": "Sobre Mim",
+    "gallery": "Galeria",
+    "video": "Vídeo",
+    "virtualTour": "Virtual Tour",
+    "location": "Localização",
+    "contact": "Contacto",
+    "schedule": "Agendar visita"
+  },
+  "hero": {
+    "title": "dê o próximo passo connosco",
+    "subtitle": "uma propriedade, duas soluções",
+    "rooms": "Quartos",
+    "wc": "WC",
+    "area": "Área total",
+    "parking": "Vaga",
+    "investmentBtn": "Investimento",
+    "housingBtn": "Habitação Própria"
+  },
+  "about": {
+    "tag": "01 — Sobre Mim",
+    "title": "O que me proponho <br /><em>fazer por si...</em>",
+    "p1": "Com experiência acumulada em áreas tão distintas como a financeira, IT, comercial e imobiliário, tenho como objetivo único, cuidar do seu negócio, como do meu se tratasse. Para tal, rodeei-me de uma estrutura profissional capaz, para lhe poder prestar-lhe um serviço de excelência.",
+    "p2": "Hoje em dia, e apesar da formação e aprendizagem serem continuas, sinto-me perfeitamente capacitado para poder servi-lo da forma mais adequada e vantajosa para o seu negócio, quer se trate de VENDER, COMPRAR ou ARRENDAR um imóvel."
+  },
+  "investment": {
+    "tag1": "02 — Investimento",
+    "title1": "Nua Propriedade + Usufruto Vitalício<br /><em>Um investimento à sua medida</em>",
+    "tag2": "03 — Investimento",
+    "title2": "Uma oportunidade de<br /><em>investimento sólido</em>",
+    "businessTag": "O Negócio",
+    "businessP1": "Este tipo de investimento decorre da possibilidade de imobilizar capital que só estará disponível a médio/longo prazo, dependendo da idade do usufrutuário.",
+    "businessP2": "No caso específico deste negócio, a proposta vem com pequenas alterações processuais a pedido do atual proprietário e futuro usufrutuário, como sejam, ficar do lado dele os seguintes custos:",
+    "costs": {
+      "imi": "IMI",
+      "condo": "Condomínio",
+      "insurance": "Seguro Multirriscos",
+      "utilities": "Água, luz, energia e comunicações",
+      "maintenance": "Manutenção do apartamento"
+    },
+    "noRent": "Inexistência de qualquer renda a pagar.",
+    "lifetimeUsufruct": "Usufruto vitalício, isto é, a posse do imóvel só passará para o futuro proprietário após o falecimento do usufrutuário.",
+    "valuationTag": "A Valorização",
+    "valuationIntro": "Para imóveis de Tipologia T3/T4 remodelados na zona da Av. das Escolas, na Portela:",
+    "marketConservative": "Valor de mercado conservador: <strong>500.000 €</strong>",
+    "marketProbable": "Valor de mercado provável: <strong>525.000 € – 575.000 €</strong>",
+    "marketPremium": "Valor premium (bem remodelado): <strong>600.000 € ou mais</strong>",
+    "scenarioIntro": "Cenário de valorização estimado <strong>(15 anos)</strong>",
+    "scenarioConservative": "Conservador (3,3%/ano): <strong>800.000 €</strong>",
+    "scenarioProbable": "Provável (5,2%/ano): <strong>950.000 € – 1.100.000 €</strong>",
+    "scenarioFavorable": "Muito favorável (6,7%/ano): <strong>1.200.000 € – 1.400.000 €</strong>"
+  },
+  "housing": {
+    "tag1": "04 — Habitação Própria",
+    "title1": "Sofisticação e centralidade<br /><em>Apartamento T3 de Prestígio com vista rio</em>",
+    "tag2": "05 — Habitação Própria",
+    "title2": "A sua casa",
+    "businessTag": "O Negócio",
+    "businessItems": [
+      "Aquisição do imóvel com transmissão e posse após a escritura.",
+      "CPCV de imediato com <strong>10%</strong> de sinal.",
+      "Escritura a 90 dias com possibilidade de estender a mais 30 dias na forma de comodato."
+    ],
+    "valuationTag": "A Valorização",
+    "marketIntro": "Para imóveis de Tipologia T3/T4 remodelados na zona da Av. das Escolas, na Portela:",
+    "marketConservative": "Valor de mercado conservador: <strong>500.000 €</strong>",
+    "marketProbable": "Valor de mercado provável: <strong>525.000 € a 575.000 €</strong>",
+    "marketPremium": "Valor premium (bem remodelado): <strong>600.000 € ou mais</strong>",
+    "scenarioIntro": "Cenário Valor estimado (15 anos)",
+    "scenarioConservative": "Conservador (3,3%/ano): <strong>800.000 €</strong>",
+    "scenarioProbable": "Provável (5,2%/ano): <strong>950.000 € – 1.100.000 €</strong>",
+    "scenarioFavorable": "Muito favorável (6,7%/ano): <strong>1.200.000 € – 1.400.000 €</strong>",
+    "qualityTag": "A Qualidade",
+    "qualityItems": [
+      "Qualidade e valorização contínua.",
+      "Sistema de climatização Mitsubishi Electric com 2 unidades (em garantia).",
+      "Caixilharia com vidro duplo para conforto térmico e acústico superior.",
+      "Canalização e componente elétrica totalmente atualizadas.",
+      "Pintura e impermeabilização recentemente intervencionadas."
+    ]
+  },
+  "amenities": {
+    "tag": "06 — Diferenciais",
+    "items": {
+      "Vista Rio": "Vista Rio",
+      "Duas frentes": "Duas frentes",
+      "Segurança": "Segurança",
+      "Ar condicionado": "Ar condicionado",
+      "Elevadores": "Elevadores",
+      "Próximo ao Parque das Nações": "Próximo ao Parque das Nações",
+      "Box com mezzanine": "Box com mezzanine",
+      "Localização Premium": "Localização Premium"
+    }
+  },
+  "gallery": {
+    "tag": "07 — Galeria",
+    "title": "Cada ambiente,<br />uma <em>experiência</em>",
+    "photos": "{{count}} fotografias",
+    "alts": {
+      "living": "Sala de estar com sofá amplo e janelas do piso ao teto",
+      "modern": "Sala de estar moderna com janelas panorâmicas",
+      "dining": "Mesa de jantar com design contemporâneo",
+      "kitchen": "Cozinha planejada em mármore e madeira",
+      "hall": "Hall de entrada com escada em pé de asa",
+      "pool": "Piscina iluminada à noite"
+    }
+  },
+  "video": {
+    "tag": "08 — Vídeo",
+    "title": "Conheça o imóvel<br /><em>em movimento</em>",
+    "fallback": "O seu navegador não suporta vídeo."
+  },
+  "virtualTour": {
+    "tag": "09 — Virtual Tour",
+    "title": "Explore cada espaço<br /><em>como se lá estivesse</em>"
+  },
+  "location": {
+    "tag": "10 — Localização",
+    "title": "Portela de Sacavém,<br /><em>junto ao Parque das Nações</em>",
+    "address": "Avenida das escolas, 12<br />Portela de Sacavém, Loures - Portugal",
+    "places": {
+      "cc": "Centro Comercial da Portela",
+      "sports": "Parque Desportivo",
+      "schools": "Escolas",
+      "auditorium": "Auditório da Portela"
+    },
+    "dist": "min"
+  },
+  "contact": {
+    "tag": "11 — Contacto",
+    "title": "Agende sua<br /><em>visita exclusiva</em>",
+    "p1": "Estarei disponível para apresentar pessoalmente cada detalhe desta residência excepcional. Visitas com hora marcada, sete dias por semana.",
+    "role": "Consultor imobiliário",
+    "success": "Mensagem enviada",
+    "successSubtitle": "Entraremos em contacto<br /><em>em breve</em>",
+    "form": {
+      "name": "Nome completo",
+      "namePlaceholder": "Seu nome",
+      "email": "E-mail",
+      "emailPlaceholder": "seu@email.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(+351) 123 456 789",
+      "message": "Mensagem",
+      "messagePlaceholder": "Gostaria de agendar uma visita...",
+      "submit": "Enviar mensagem"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Century 21 Imóveis de Luxo. Todos os direitos reservados."
+  }
+}
