@@ -29,41 +29,15 @@ import {
 
 import { FaWhatsapp } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
-import rvpt from "../assets/rvpt.png";
 import { site } from "../site.config";
-import sala1 from "../assets/sala1.jpg";
 
-import logo from "../assets/rvpt.png";
-import vista from "../assets/vistasala.jpeg";
-import planta from "../assets/planta.png";
-import qr from "../assets/qr.png";
-import sala from "../assets/sala.jpg";
-import predio from "../assets/predio.jpg";
-import video from "../assets/video.mp4";
 import { AutomaticTranslation } from "./components/AutomaticTranslation";
-import profile2 from "../assets/profile2.png";
-import frame from "../assets/frame.jpg";
-import logocb from "../assets/logocb.png";
-import logoteam from "../assets/logoTeam.png";
-import panorama from "../assets/panorama.jpeg";
-import footer from "../assets/footer.png";
-import vista2 from "../assets/vista2.jpeg";
-import panoramica from "../assets/panoramica.jpg";
 
 const HERO_IMG = site.images.hero;
 
 const GALLERY = site.images.gallery;
 
-const AMENITIES = [
-  { icon: Waves, label: "Vista Rio" },
-  { icon: Sun, label: "Duas frentes" },
-  { icon: Shield, label: "Segurança" },
-  { icon: Wind, label: "Ar condicionado" },
-  { icon: MoveVertical, label: "Elevadores" },
-  { icon: TreePine, label: "Próximo ao Parque das Nações" },
-  { icon: Car, label: "Box com mezzanine" },
-  { icon: MapPin, label: "Localização Premium" },
-];
+const AMENITIES = site.amenities;
 
 type ContactFormData = {
   nome: string;
@@ -71,6 +45,19 @@ type ContactFormData = {
   telefone: string;
   mensagem: string;
 };
+
+/** Converte **texto** em negrito */
+function Rich({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("**").map((part, i) =>
+        i % 2 ? <strong key={i}>{part}</strong> : part
+      )}
+    </>
+  );
+}
+
+const images = site.images;
 
 export default function App() {
   const [isEnglish, setIsEnglish] = useState(false);
@@ -287,12 +274,12 @@ ${linkDoImovel}`;
             Place holder - metes o que quiseres aqui 
           </p> */}
           <img
-            src={rvpt}
+            src={images.emblem}
             alt="Emblema"
             className="mx-auto my-18 w-100 md:translate-y-35"
           />
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-normal leading-none mb-6 max-w-5xl mx-auto text-center">
-            dê o próximo passo connosco
+            {site.property.heroTitle}
             {/*<br />
             <em className="text-primary not-italic">T3</em>
             <br /> */}
@@ -301,7 +288,7 @@ ${linkDoImovel}`;
             <br />
             <br />
             <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-normal leading-none mb-6 max-w-3xl mx-auto text-center">
-            uma propriedade, duas soluções
+            {site.property.heroSubtitle}
           </h1>
           
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mt-8">
@@ -349,25 +336,25 @@ ${linkDoImovel}`;
               01 — Sobre Mim
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight mb-8">
-            O que me proponho 
+            {site.about.title[0]}
             <br />
-            <em>fazer por si...</em>
+            <em>{site.about.title[1]}</em>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6 font-light">
-              A minha abordagem assenta no rigor, transparência e na gestão de expectativas baseada em dados, pilares que entendo serem essenciais para a sua decisão. Com um percurso multidisciplinar em finanças, tecnologia e imobiliário, entendo a necessidade de processos eficientes, ágeis e sem ruído.
+              {site.about.paragraphs[0]}
             </p>
             <p className="text-muted-foreground leading-relaxed font-light">
-              O meu compromisso é gerir o seu imóvel com a mesma visão estratégica que aplicaria no seu negócio: foco total em resultados, otimização de tempo e proteção absoluta do seu investimento. Conte comigo e com a estrutura da NT Real Estate Team, bem como do nosso parceiro de eleição, a Century 21 Colombo, para uma mediação de alto nível, onde a sua prioridade é o meu único indicador de sucesso.
+              {site.about.paragraphs[1]}
             </p>
             <div className="mt-10 pt-10 border-t border-border grid grid-cols-2 gap-6 items-center">
               <img
-                src={logocb}
+                src={images.aboutLogos[0]}
                 alt="Logo 1"
                 className="w-full max-w-[300px] h-auto object-contain mx-auto"
               />
 
               <img
-                src={logoteam}
+                src={images.aboutLogos[1]}
                 alt="Logo 2"
                 className="w-full max-w-[300px] h-auto object-contain mx-auto"
               />
@@ -376,7 +363,7 @@ ${linkDoImovel}`;
           <div className="relative">
             <div className="bg-secondary aspect-[4/5] overflow-hidden">
               <img
-                src={profile2}
+                src={images.aboutPhoto}
                 alt="Homem de negócios sorridente em um escritório moderno, representing o consultor imobiliário"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -399,9 +386,9 @@ ${linkDoImovel}`;
 
     <div className="flex flex-col md:flex-row md:items-start gap-40 mb-8">
   <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight">
-    Nua Propriedade + Usufruto Vitalício
+    {site.investment.title1[0]}
     <br />
-    <em>Um investimento à sua medida</em>
+    <em>{site.investment.title1[1]}</em>
   </h2>
     </div>
 
@@ -409,7 +396,7 @@ ${linkDoImovel}`;
     <div>
       <div className="mt-42">
         <img
-          src={sala}
+          src={images.investmentPhoto}
           alt="Sala de estar com sofá amplo e janelas do piso ao teto"
           className="w-full aspect-[16/9] object-cover"
         />
@@ -418,7 +405,7 @@ ${linkDoImovel}`;
       <div className="mt-10 flex items-center justify-center gap-4">
 
   <img
-    src={qr}
+    src={images.qr}
     alt="QR Code"
     className="w-24 h-24 object-contain"
   />
@@ -437,7 +424,7 @@ ${linkDoImovel}`;
     </div>
     <div className="mt-20">
       <img
-        src={planta}
+        src={images.plan}
         alt="Planta do apartamento"
         className="w-full object-contain border border-border"
       />
@@ -458,9 +445,9 @@ ${linkDoImovel}`;
 
     <div className="flex flex-col md:flex-row md:items-start gap-40 mb-8">
   <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight">
-    Uma oportunidade de
+    {site.investment.title2[0]}
     <br />
-    <em>investimento sólido</em>
+    <em>{site.investment.title2[1]}</em>
   </h2>
   <a
     href={site.property.listingInvestmentUrl}
@@ -468,7 +455,7 @@ ${linkDoImovel}`;
     rel="noopener noreferrer"
   >
   <img
-    src={vista}
+    src={images.investmentView}
     alt="Vista da sala de estar com janelas panorâmicas e vista para a natureza"
     className="w-full max-w-xs mx-auto md:w-52 lg:w-100 object-contain"
   />
@@ -487,33 +474,25 @@ ${linkDoImovel}`;
 
     <div className="text-muted-foreground leading-8 space-y-6">
       <p>
-        Este tipo de investimento decorre da possibilidade de imobilizar
-        capital que só estará disponível a médio/longo prazo,
-        dependendo da idade do usufrutuário.
+        {site.investment.businessIntro}
       </p>
 
       <div>
         <p className="mb-3">
-          No caso específico deste negócio, a proposta vem com pequenas
-          alterações processuais a pedido do atual proprietário e futuro
-          usufrutuário, como sejam, ficar do lado dele os seguintes custos:
+          {site.investment.costsIntro}
         </p>
 
         <ul className="list-disc list-inside space-y-1 ml-2">
-          <li>IMI</li>
-          <li>Condomínio</li>
-          <li>Seguro Multirriscos</li>
-          <li>Água, luz, energia e comunicações</li>
-          <li>Manutenção do apartamento</li>
+          {site.investment.costs.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
         </ul>
       </div>
 
       <div>
-        <p>Inexistência de qualquer renda a pagar.</p>
-        <p>
-          Usufruto vitalício, isto é, a posse do imóvel só passará para o
-          futuro proprietário após o falecimento do usufrutuário.
-        </p>
+        {site.investment.notes.map((n) => (
+          <p key={n}>{n}</p>
+        ))}
       </div>
     </div>
   </div>
@@ -527,26 +506,25 @@ ${linkDoImovel}`;
 
     <div>
       <p className="mb-4">
-        Para imóveis de Tipologia T3/T4 remodelados na zona da Av. das Escolas,
-        na Portela:
+        {site.investment.valuation.marketIntro}
       </p>
 
       <ul className="list-disc list-inside space-y-2 ml-2">
-        <li>Valor de mercado conservador: <strong>500.000 €</strong></li>
-        <li>Valor de mercado provável: <strong>525.000 € – 575.000 €</strong></li>
-        <li>Valor premium (bem remodelado): <strong>600.000 € ou mais</strong></li>
+        {site.investment.valuation.market.map((t) => (
+          <li key={t}><Rich text={t} /></li>
+        ))}
       </ul>
     </div>
 
     <div>
       <p className="mb-4">
-        Cenário de valorização estimado <strong>(15 anos)</strong>
+        <Rich text={site.investment.valuation.scenarioIntro} />
       </p>
 
       <ul className="list-disc list-inside space-y-2 ml-2">
-        <li>Conservador (3,3%/ano): <strong>800.000 €</strong></li>
-        <li>Provável (5,2%/ano): <strong>950.000 € – 1.100.000 €</strong></li>
-        <li>Muito favorável (6,7%/ano): <strong>1.200.000 € – 1.400.000 €</strong></li>
+        {site.investment.valuation.scenario.map((t) => (
+          <li key={t}><Rich text={t} /></li>
+        ))}
       </ul>
     </div>
 
@@ -569,9 +547,9 @@ ${linkDoImovel}`;
 
     <div className="flex flex-col md:flex-row md:items-start gap-40 mb-8">
       <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight">
-        Sofisticação e centralidade
+        {site.housing.title1[0]}
         <br />
-        <em>Apartamento T3 de Prestígio com vista rio</em>
+        <em>{site.housing.title1[1]}</em>
       </h2>
     </div>
 
@@ -580,7 +558,7 @@ ${linkDoImovel}`;
       {/* ESQUERDA - Planta */}
       <div className="mt-20">
         <img
-          src={planta}
+          src={images.plan}
           alt="Planta do apartamento"
           className="w-full object-contain border border-border"
         />
@@ -591,7 +569,7 @@ ${linkDoImovel}`;
 
         <div className="mt-42">
           <img
-            src={predio}
+            src={images.housingPhoto}
             alt="Fachada do prédio"
             className="w-full aspect-[16/9] object-cover"
           />
@@ -610,7 +588,7 @@ ${linkDoImovel}`;
           </div>
 
           <img
-            src={qr}
+            src={images.qr}
             alt="QR Code"
             className="w-24 h-24 object-contain"
           />
@@ -636,7 +614,7 @@ ${linkDoImovel}`;
 
     <div className="flex flex-col md:flex-row md:items-start gap-40 mb-8">
   <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight">
-    A sua casa
+    {site.housing.title2}
   </h2>
   <a
     href={site.property.listingHousingUrl}
@@ -644,7 +622,7 @@ ${linkDoImovel}`;
     rel="noopener noreferrer"
   >
   <img
-    src={panorama}
+    src={images.housingView}
     alt="Vista da sala de estar com janelas panorâmicas e vista para a natureza"
     className="w-full max-w-xs mx-auto md:w-52 lg:w-100 lg:ml-70 object-contain"
   />
@@ -663,18 +641,9 @@ ${linkDoImovel}`;
     </h3>
 
     <ul className="list-disc pl-6 space-y-6 text-muted-foreground leading-8">
-      <li>
-        Aquisição do imóvel com transmissão e posse após a escritura.
-      </li>
-
-      <li>
-        CPCV de imediato com <strong>10%</strong> de sinal.
-      </li>
-
-      <li>
-        Escritura a 90 dias com possibilidade de estender a mais 30 dias
-        na forma de comodato.
-      </li>
+      {site.housing.business.map((t) => (
+        <li key={t}><Rich text={t} /></li>
+      ))}
     </ul>
   </div>
 
@@ -687,26 +656,25 @@ ${linkDoImovel}`;
     <div className="space-y-8 text-muted-foreground leading-8">
       <div>
         <p className="mb-4">
-          Para imóveis de Tipologia T3/T4 remodelados na zona da Av. das
-          Escolas, na Portela:
+          {site.housing.valuation.marketIntro}
         </p>
 
         <ul className="list-disc pl-6 space-y-2">
-          <li>Valor de mercado conservador: <strong>500.000 €</strong></li>
-          <li>Valor de mercado provável: <strong>525.000 € a 575.000 €</strong></li>
-          <li>Valor premium (bem remodelado): <strong>600.000 € ou mais</strong></li>
+          {site.housing.valuation.market.map((t) => (
+            <li key={t}><Rich text={t} /></li>
+          ))}
         </ul>
       </div>
 
       <div>
         <p className="mb-4">
-          Cenário Valor estimado (15 anos)
+          <Rich text={site.housing.valuation.scenarioIntro} />
         </p>
 
         <ul className="list-disc pl-6 space-y-2">
-          <li>Conservador (3,3%/ano): <strong>800.000 €</strong></li>
-          <li>Provável (5,2%/ano): <strong>950.000 € – 1.100.000 €</strong></li>
-          <li>Muito favorável (6,7%/ano): <strong>1.200.000 € – 1.400.000 €</strong></li>
+          {site.housing.valuation.scenario.map((t) => (
+            <li key={t}><Rich text={t} /></li>
+          ))}
         </ul>
       </div>
     </div>
@@ -719,25 +687,9 @@ ${linkDoImovel}`;
     </h3>
 
     <ul className="list-disc pl-6 space-y-4 text-muted-foreground leading-8">
-      <li>Qualidade e valorização contínua.</li>
-
-      <li>
-        Sistema de climatização Mitsubishi Electric com 2 unidades
-        (em garantia).
-      </li>
-
-      <li>
-        Caixilharia com vidro duplo para conforto térmico e acústico
-        superior.
-      </li>
-
-      <li>
-        Canalização e componente elétrica totalmente atualizadas.
-      </li>
-
-      <li>
-        Pintura e impermeabilização recentemente intervencionadas.
-      </li>
+      {site.housing.quality.map((t) => (
+        <li key={t}>{t}</li>
+      ))}
     </ul>
   </div>
 </div>
@@ -774,7 +726,7 @@ ${linkDoImovel}`;
               07 — Galeria
             </p>
             <h2 className="font-display text-4xl font-normal">
-              Cada ambiente,<br />uma <em>experiência</em>
+              {site.gallery.title[0]}<br />{site.gallery.title[1]} <em>{site.gallery.title[2]}</em>
             </h2>
           </div>
           <p className="text-muted-foreground text-sm hidden md:block">
@@ -812,9 +764,9 @@ ${linkDoImovel}`;
     </p>
 
     <h2 className="font-display text-4xl md:text-5xl font-normal mb-8">
-      Conheça o imóvel
+      {site.video.title[0]}
       <br />
-      <em>em movimento</em>
+      <em>{site.video.title[1]}</em>
     </h2>
 
     <div
@@ -838,7 +790,7 @@ ${linkDoImovel}`;
           }
         }}
       >
-        <source src={video} type="video/mp4" />
+        <source src={images.video} type="video/mp4" />
         O seu navegador não suporta vídeo.
       </video>
     </div>
@@ -857,22 +809,22 @@ ${linkDoImovel}`;
     </p>
 
     <h2 className="font-display text-4xl md:text-5xl font-normal leading-tight mb-8">
-      Explore cada espaço
+      {site.virtualTour.title[0]}
       <br />
-      <em>como se lá estivesse</em>
+      <em>{site.virtualTour.title[1]}</em>
     </h2>
 
     {/* Mobile */}
     <div className="block md:hidden">
       <a
-        href="https://virtualhome360.pt/app/viewer/t3-portela"
+        href={site.virtualTour.url}
         target="_blank"
         rel="noopener noreferrer"
         className="group block overflow-hidden rounded-xl border border-border shadow-xl"
       >
         <div className="relative">
           <img
-            src={sala1}
+            src={images.virtualTourPoster}
             alt="Visita Virtual"
             className="w-full"
           />
@@ -891,7 +843,7 @@ ${linkDoImovel}`;
     {/* Desktop */}
     <div className="hidden md:block relative w-full overflow-hidden rounded-xl border border-border shadow-xl">
       <iframe
-        src="https://virtualhome360.pt/app/viewer/t3-portela"
+        src={site.virtualTour.url}
         title="Visita Virtual"
         className="w-full"
         style={{
@@ -939,24 +891,19 @@ ${linkDoImovel}`;
                 10 — Localização
               </p>
               <h2 className="font-display text-4xl font-normal mb-8">
-                Portela de Sacavém,
+                {site.location.title[0]}
                 <br />
-                <em>junto ao Parque das Nações</em>
+                <em>{site.location.title[1]}</em>
               </h2>
               <div className="flex items-start gap-3 mb-6">
                 <MapPin size={16} className="text-primary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground font-light leading-relaxed">
-                  Avenida das escolas, 12<br />
-                  Portela de Sacavém, Loures - Portugal
+                  {site.location.addressLines[0]}<br />
+                  {site.location.addressLines[1]}
                 </p>
               </div>
               <div className="mt-10 space-y-4">
-                {[
-                  { label: "Centro Comercial da Portela", dist: "3 min" },
-                  { label: "Parque Desportivo", dist: "3 min" },
-                  { label: "Escolas", dist: "1 min" },
-                  { label: "Auditório da Portela", dist: "1 min" },
-                ].map(({ label, dist }) => (
+                {site.location.places.map(({ label, dist }) => (
                   <div key={label} className="flex items-center justify-between py-3 border-b border-border">
                     <span className="text-sm text-muted-foreground">{label}</span>
                     <span className="font-mono text-primary text-xs tracking-widest">
@@ -969,7 +916,7 @@ ${linkDoImovel}`;
             <div className="bg-[#1A1814] bg-muted aspect-square flex items-center justify-center relative overflow-hidden">
               
               <img
-                src={frame}
+                src={images.map}
                 alt="Ponte 25 de abril iluminada à noite, com vista para o rio Tejo e a cidade de Lisboa"
                 className="w-full h-full object-cover opacity-50"
               />
@@ -977,14 +924,14 @@ ${linkDoImovel}`;
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <a 
-              href="https://www.google.pt/maps/place/Av.+das+Escolas+12,+Portela/@38.7879317,-9.1197607,901a,35y,90h,39.19t/data=!3m1!1e3!4m15!1m8!3m7!1s0xd19321a9b24d53d:0xcadff7f30df23b9b!2sAv.+das+Escolas+12,+Portela!3b1!8m2!3d38.786229!4d-9.111899!16s%2Fg%2F11c5k_mdfb!3m5!1s0xd19321a9b24d53d:0xcadff7f30df23b9b!8m2!3d38.786229!4d-9.111899!16s%2Fg%2F11c5k_mdfb?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
+              href={site.location.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
                       >
                   <MapPin size={32} className="text-primary mx-auto mb-3" />
                   <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground">
-                    Portela
+                    {site.location.mapLabel}
                   </p>
                   </a>
                 </div>
@@ -1005,13 +952,12 @@ ${linkDoImovel}`;
               11 — Contacto
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-normal mb-8 leading-tight">
-              Agende sua
+              {site.contact.title[0]}
               <br />
-              <em>visita exclusiva</em>
+              <em>{site.contact.title[1]}</em>
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-12">
-              Estarei disponível para apresentar pessoalmente cada detalhe
-              desta residência excepcional. Visitas com hora marcada, sete dias por semana.
+              {site.contact.text}
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-5 border border-border">
@@ -1189,7 +1135,7 @@ ${linkDoImovel}`;
     {/* Esquerda - Logo */}
     <div className="flex justify-center md:justify-start">
       <img
-        src={footer}
+        src={images.footerLogo}
         alt="Logo do footer"
         className="h-20 w-auto object-contain"
       />
